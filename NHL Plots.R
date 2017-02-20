@@ -1,0 +1,7 @@
+nhlgraph <- plot_ly(data = NHL, x = NHL$Height, y = NHL$Weight, mode = 'markers', color = NHL$POS)
+
+CenterPlot <- ggplot(data = Center, aes(x=Center$Pts, y = Center$TOI)) + geom_point(aes(text = paste(Center$FirstLast,Center$Team,sep = "")), alpha = .5) + geom_smooth(aes(colour = Center$Position, fill = Center$Position)) + facet_wrap(~ Position) + ggtitle("Most Efficient NHL Players") + labs(x = "Points", y = "Time on Ice") + theme(plot.margin = unit(c(.5,.1,.5,.5), "in"), aspect.ratio = 1, legend.background = element_rect(color = 'black'), plot.background = element_rect(colour = "black", size = 1))
+
+TPG <-ggplot(data = NHL, aes(x=Pts, y = TimePerGame)) + geom_point(aes(text = paste(FirstLast,NHL$Team,sep = "")), alpha = .5) + geom_smooth(aes(colour = Position, fill = Position)) + facet_wrap(~ Position) + ggtitle("Most Efficient NHL Players") + labs(x = "Points", y = "Time Per Game") + theme(plot.margin = unit(c(1,1,1,1), "in"), aspect.ratio = .5, legend.background = element_rect(color = 'black'), plot.background = element_rect(colour = "black", size = 1))
+
+nhlgraph2 <-ggplot(data = NHL, aes(x=Pts, y = TOI)) + geom_point(aes(text = paste(FirstLast,NHL$Team,sep = "")), alpha = .5) + geom_smooth(aes(colour = Position, fill = Position)) + facet_wrap(~ Position) + ggtitle("Most Efficient NHL Players") + labs(x = "Points", y = "Time on Ice") + theme(plot.margin = unit(c(1,1,1,1), "in"), aspect.ratio = .5, legend.background = element_rect(color = 'black'), plot.background = element_rect(colour = "black", size = 1))

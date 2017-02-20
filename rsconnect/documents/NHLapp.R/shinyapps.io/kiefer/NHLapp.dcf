@@ -1,0 +1,10 @@
+name: NHLapp
+account: kiefer
+server: shinyapps.io
+appId: 128804
+bundleId: 573922
+url: https://kiefer.shinyapps.io/NHLapp/
+when: 1475364084.60577
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: app.R|NHL.txt
